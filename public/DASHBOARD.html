@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Dashboard.css" />
+  <title>Ayo Bantu</title>
+  <link rel="icon" href="./src/pictures/capil.svg" type="image/x-icon">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-blue sidebar collapse">
+        <div class="position-sticky">
+          <ul class="nav flex-column">
+            <div class="nav-logo">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <img src="./src/pictures/capil.svg" alt="Logo" class="logo-img" style="margin-top: 20px" />
+                  <span>Disdukcapil</span>
+                </a>
+              </li>
+            </div>
+            <div class="nav-feature">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Login</a>
+              </li>
+            </div>
+            <div class="nav-records" style="max-height: 500px; overflow-y: auto; padding: 10px; max-width: 200px;" >
+              <li class="nav-item">
+                <button id="toggleRecords" class="btn btn-info">Show Records</button>
+              </li>
+              <button id="newChatBtn" class="btn btn-primary mb-3">New Chat</button>
+              <ul id="recordList" class="list-unstyled" style="display: none;">
+                <!-- Records will be dynamically added here -->
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- Main Content Area -->
+      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="chat-container">
+          <h2>Chat Interface</h2>
+          
+          <div id="chatBox" class="border p-3 mb-4" style="height: 500px; overflow-y: scroll;">
+            <div id="loader" class="loader" style="display: none;"></div>
+          </div>
+        
+          <div class="input-area">
+            <input type="text" id="textInput" class="form-control" placeholder="Masukan Pertanyaan Anda..." />
+            <button id="sendBtn" class="btn btn-primary">Send</button>
+            <button id="voiceInputBtn" class="btn btn-secondary">🎤</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Default (untuk layar desktop) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: none; /* Hide top navbar as sidebar replaces it */
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #7126b5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 250px;
+  padding: 20px;
+}
+
+.sidebar .logo-img {
+  height: 50px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #f0a500;
+}
+
+.main-content {
+  margin-left: 250px; /* Push content to the right by sidebar width */
+  padding: 20px;
+}
+
+.nav-feature {
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.nav-feature .nav-item {
+  margin-bottom: 20px; 
+}
+
+/* Chat container  */
+.chat-container {
+  max-width: 100%;
+  margin: 50px auto;
+}
+
+/* Loader animation */
+.loader {
+  width: 50px;
+  height: 5px;
+  background-color: #888; /* Gray color */
+  animation: loading 3.0s infinite;
+  margin: 20px auto;
+  text-align: center;
+}
+
+@keyframes loading {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+
+.input-area {
+  display: flex;
+  align-items: center;
+  
+}
+
+#sendBtn {
+  margin-left: 10px;
+}
+
+/* Media Queries */
+
+/* Tablet view: Adjust sidebar width and content area */
+@media screen and (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+
+  .sidebar a {
+    font-size: 16px;
+  }
+}
+
+/* Mobile view: Collapse sidebar, make it toggle-able */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    padding: 15px;
+    display: none; /* Hide sidebar on mobile */
+  }
+
+  .sidebar.show {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .sidebar a {
+    font-size: 16px;
+  }
+
+  .chat-container {
+    margin: 30px auto;
+  }
+
+  /* Button to toggle sidebar */
+  .navbar {
+    display: block;
+    background-color: #7126b5;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Dashboard.css" />
+  <title>Responsive Navbar</title>
+</head>
+<body>
+  <!-- LOGO -->
+  <nav class="navbar">
+    <div class="logo-section">
+      <img src="./src/pictures/capil.svg" alt="Logo" class="logo-img" />
+      <h2>Dindukcapil</h2>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <a href="pembuatan-akte.html" class="card-link">
+            <div class="card">
+              <img src="/src/pictures/Anak.png" class="card-img-top" alt="Feature 1">
+              <div class="card-body">
+                <h5 class="card-title">Syarat Pembuatan Akte</h5>
+                <p class="card-text">Baca Selengkapnya</p>
+              </div>
+            </div>
+          </a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card" onclick="cardClick('Feature 2')">
+          <img src="/src/pictures/rip.png" class="card-img-top" alt="Feature 2">
+          <div class="card-body">
+            <h5 class="card-title">Feature 2</h5>
+            <p class="card-text">Description for feature 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card" onclick="cardClick('Feature 3')">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Feature 3">
+          <div class="card-body">
+            <h5 class="card-title">Feature 3</h5>
+            <p class="card-text">Description for feature 3.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card" onclick="cardClick('Feature 4')">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Feature 4">
+          <div class="card-body">
+            <h5 class="card-title">Feature 4</h5>
+            <p class="card-text">Description for feature 4.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card" onclick="cardClick('Feature 5')">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Feature 5">
+          <div class="card-body">
+            <h5 class="card-title">Feature 5</h5>
+            <p class="card-text">Description for feature 5.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card" onclick="cardClick('Feature 6')">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Feature 6">
+          <div class="card-body">
+            <h5 class="card-title">Feature 6</h5>
+            <p class="card-text">Description for feature 6.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
