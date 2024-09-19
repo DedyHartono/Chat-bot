@@ -1,0 +1,102 @@
+
+body {
+  background-color: rgb(68, 72, 72);
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.left-container {
+  flex: 1;
+  color: white;
+  padding: 40px;
+  text-align: left;
+}
+
+.left-container h1 {
+  font-size: 3rem;
+}
+
+.left-container p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+.subtitle {
+  font-size: 16px; /* Ukuran lebih kecil untuk "Aplikasi Pembantu" */
+  margin: 0;
+  font-weight: bold;
+}
+
+.highlight {
+  font-size: 100px; /* Ukuran besar untuk "Si-D'nok" */
+  font-weight: bold; /* Huruf tebal */
+  margin: 0;
+  color: white; /* Tambahkan warna putih agar kontras dengan latar belakang */
+  font-style: italic;
+  
+}
+
+
+
+.right-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7), 0 12px 24px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
