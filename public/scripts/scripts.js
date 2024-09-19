@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return "Maaf, terjadi kesalahan.";
     }
   }
+  
 
   // Function to display messages in chat box and read out response
   async function sendMessage(message) {
