@@ -5,7 +5,7 @@ const fs = require('fs'); // Import fs module
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
-const port = 3000;
+const port = 8000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());

@@ -7,8 +7,45 @@
   <link rel="stylesheet" href="Dashboard.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <title>Ayo Bantu</title>
+  <title>Our Service</title>
   <link rel="icon" href="./src/pictures/capil.svg" type="image/x-icon">
+  <style>
+    .service-card {
+      border: 1px solid #ddd;
+      border-radius: .375rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+    .service-card .card-body {
+      padding: 2rem;
+      text-align: center;
+    }
+    .service-card .card-footer {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      text-align: center;
+    }
+    .service-card .card-footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .service-card .card-footer a:hover {
+      color: #d4d4d4;
+    }
+    .btn-success {
+      background-color: #25D366; /* WhatsApp green */
+      border-color: #25D366;
+    }
+    .btn-success:hover {
+      background-color: #128C7E;
+      border-color: #128C7E;
+    }
+  </style>
 </head>
 <body>
   <div class="container-fluid">
@@ -27,7 +64,7 @@
             </div>
             <div class="nav-feature">
               <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="DASHBOARD.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
@@ -51,25 +88,20 @@
           </ul>
         </div>
       </nav>
-      
-      <!-- Main Content Area -->
-      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div id="home">
-          <h2>Welcome to Ayo Bantu</h2>
-          <p>This is a platform dedicated to helping you with your needs. Explore our services and learn more about us.</p>
-        </div>
 
-        <div class="chat-container">
-          <h2>Chat Interface</h2>
-          
-          <div id="chatBox" class="border p-3 mb-4" style="height: 500px; overflow-y: scroll;">
-            <div id="loader" class="loader" style="display: none;"></div>
-          </div>
-        
-          <div class="input-area">
-            <input type="text" id="textInput" class="form-control" placeholder="Masukan Pertanyaan Anda..." />
-            <button id="sendBtn" class="btn btn-primary">Send</button>
-            <button id="voiceInputBtn" class="btn btn-secondary">🎤</button>
+      <!-- Services Content Area -->
+      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div id="services" class="my-5 d-flex justify-content-center">
+          <div class="service-card card">
+            <div class="card-body">
+              <h3 class="card-title">Our Premium Service</h3>
+              <p class="card-text">Laporkan masalah atau keluhan terkait layanan publik, infrastruktur, atau isu-isu lainnya di kota Semarang melalui fitur aduan kami. Kirimkan aduan Anda dengan mudah menggunakan chat atau rekam suara, dan kami akan memastikan laporan Anda diteruskan ke pihak berwenang.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://wa.me/6285243852167" class="btn btn-success" target="_blank">
+                Contact Us on WhatsApp <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
