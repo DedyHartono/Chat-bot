@@ -16,6 +16,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s ease;
+      max-width: 50%;
     }
     .service-card:hover {
       transform: scale(1.05);
@@ -57,8 +58,8 @@
             <div class="nav-logo">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
-                  <img src="./src/pictures/capil.svg" alt="Logo" class="logo-img" style="margin-top: 20px" />
-                  <span>Disdukcapil</span>
+                  <img src="./src/pictures/capil.svg" alt="Logo" class="logo-img"  />
+                  <span style="font-weight: bold;">Disdukcapil</span>
                 </a>
               </li>
             </div>
@@ -72,13 +73,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="services.html">Services</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Login</a>
-              </li>
             </div>
-            <div class="nav-records" style="max-height: 500px; overflow-y: auto; padding: 10px; max-width: 200px;" >
+            <!--  <div class="nav-records" style="max-height: 500px; overflow-y: auto; padding: 20px; max-width: 200px; gap: 3;" > -->
+            <div class="nav-records" style="max-height: 400px; padding: 20px; max-width: 200px; gap: 3;" >
               <li class="nav-item">
-                <button id="toggleRecords" class="btn btn-info">Show Records</button>
+                <button id="toggleRecords" class="btn btn-info" style="margin-bottom: 20px;">Show Records</button>
               </li>
               <button id="newChatBtn" class="btn btn-primary mb-3">New Chat</button>
               <ul id="recordList" class="list-unstyled" style="display: none;">
@@ -90,20 +89,23 @@
       </nav>
 
       <!-- Services Content Area -->
-      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div id="services" class="my-5 d-flex justify-content-center">
-          <div class="service-card card">
-            <div class="card-body">
-              <h3 class="card-title" style="font-weight: bold; margin-bottom: 60px">Our Premium Service</h3>
-              <p class="card-text">Laporkan masalah atau keluhan terkait layanan publik, infrastruktur, atau isu-isu lainnya di kota Semarang melalui fitur aduan kami. Kirimkan aduan Anda dengan mudah menggunakan chat atau rekam suara, dan kami akan memastikan laporan Anda diteruskan ke pihak berwenang.</p>
-            </div>
-            <div class="card-footer">
-              <a href="https://wa.me/6285243852167" class="btn btn-success d-flex justify-content-center align-items-center" target="_blank">
-                Contact Us on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 10px;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+      <!-- Services Content Area -->
+<div class="col-md-9 ms-sm-auto col-lg-10 d-flex justify-content-center align-items-center vh-100">
+  <div id="services" class="my-5 d-flex justify-content-center">
+    <div class="service-card card">
+      <div class="card-body">
+        <h3 class="card-title" style="font-weight: bold; margin-bottom: 60px">Our Premium Service</h3>
+        <p class="card-text">Laporkan masalah atau keluhan terkait layanan publik, infrastruktur, atau isu-isu lainnya di kota Semarang melalui fitur aduan kami. Kirimkan aduan Anda dengan mudah menggunakan chat atau rekam suara, dan kami akan memastikan laporan Anda diteruskan ke pihak berwenang.</p>
+      </div>
+      <div class="card-footer">
+        <a href="https://wa.me/6285243852167" class="btn btn-success d-flex justify-content-center align-items-center" target="_blank">
+          Contact Us on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 10px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
       
     </div>

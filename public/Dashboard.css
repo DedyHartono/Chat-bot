@@ -30,7 +30,7 @@ body {
   height: 55px;
   width: auto;
   margin-bottom: 20px; /* Jarak bawah dari elemen logo ke elemen berikutnya */
-  margin-top: 5px; 
+  margin-top: 5px;
 }
 
 .sidebar a {
@@ -45,6 +45,7 @@ body {
 .sidebar a:hover {
   color: #f0a500;
 }
+
 
 /* Pastikan elemen induk (misalnya <li> atau <div>) menggunakan Flexbox */
 .record-list-item {
@@ -63,8 +64,6 @@ body {
   margin-left: 10px; /* Jarak antara teks dan ikon */
 }
 
-
-
 .main-content {
   margin-left: 250px; /* Push content to the right by sidebar width */
   padding: 20px;
@@ -74,6 +73,7 @@ body {
   justify-content: center;
   margin-left: 30px;
   margin-top: 45px;
+  font-weight: bold;
 }
 
 .nav-feature .nav-item {
@@ -86,50 +86,57 @@ body {
   margin: 50px auto;
 }
 
-    .chat-wrapper {
-        position: relative; /* Membuat elemen relatif untuk mengatur posisi */
-    }
+.chat-wrapper {
+  position: relative; /* Membuat elemen relatif untuk mengatur posisi */
+}
 
-    #chatBox {
-      font-size: 18px;
-      color: white;
-        height: 680px;
-        overflow-y: scroll;
-        margin-top: 50px;
-        padding-right: 15px; /* Menyediakan ruang untuk scrollbar */
-        box-sizing: content-box; /* Padding tidak mempengaruhi ukuran elemen */
-    }
+#chatBox {
+  font-size: 18px;
+  color: white;
+  height: 680px;
+  overflow-y: scroll;
+  margin-top: 50px;
+  padding-right: 15px; /* Menyediakan ruang untuk scrollbar */
+  box-sizing: content-box; /* Padding tidak mempengaruhi ukuran elemen */
+}
 
-    #chatBox::-webkit-scrollbar {
-        width: 20px; /* Lebar scrollbar */
-    }
+#chatBox::-webkit-scrollbar {
+  width: 20px; /* Lebar scrollbar */
+}
 
-    #chatBox::-webkit-scrollbar-thumb {
-        background-color: #888; /* Warna scrollbar */
-        border-radius: 6px;
-    }
+#chatBox::-webkit-scrollbar-thumb {
+  background-color: #888; /* Warna scrollbar */
+  border-radius: 6px;
+}
 
-    #chatBox::-webkit-scrollbar-thumb:hover {
-        background-color: #555; /* Warna scrollbar saat hover */
-    }
+#chatBox::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Warna scrollbar saat hover */
+}
 
-    /* Pesan user ditampilkan di sebelah kanan */
+/* Pesan user ditampilkan di sebelah kanan */
 .user-message {
   display: flex;
-  justify-content: flex-end;  /* Mengatur pesan user di sebelah kanan */
+  justify-content: flex-end; /* Mengatur pesan user di sebelah kanan */
   margin: 5px 0;
 }
 
 /* Pesan bot ditampilkan di sebelah kiri */
 .bot-message {
   display: flex;
-  justify-content: flex-start;  /* Mengatur pesan bot di sebelah kiri */
+  justify-content: flex-start; /* Mengatur pesan bot di sebelah kiri */
   margin: 5px 0;
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 1rem);
 }
 
 /* Styling kontainer pesan untuk user dan bot */
 .message-container {
-  max-width: 60%;  /* Membatasi lebar maksimum agar lebih rapi */
+  max-width: 60%; /* Membatasi lebar maksimum agar lebih rapi */
 }
 
 /* Pesan user dengan latar biru */
@@ -140,32 +147,34 @@ body {
   color: white;
 }
 
-
 /* Pesan bot dengan latar hijau */
 .bot-message .message {
   padding: 10px;
   border-radius: 10px;
-  background-color: #080808;  /* Warna latar pesan bot */
+  background-color: #080808; /* Warna latar pesan bot */
   color: white;
 }
-
-
-
 
 /* Loader animation */
 .loader {
   width: 50px;
   height: 5px;
   background-color: #888; /* Gray color */
-  animation: loading 3.0s infinite;
+  animation: loading 3s infinite;
   margin: 20px auto;
   text-align: center;
 }
 
 @keyframes loading {
-  0% { transform: scaleX(0); }
-  50% { transform: scaleX(1); }
-  100% { transform: scaleX(0); }
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
 }
 
 .input-area {
@@ -187,7 +196,6 @@ body {
 .material-symbols-outlined {
   font-size: 24px; /* Ukuran ikon */
 }
-
 
 #sendBtn {
   margin-left: 10px;

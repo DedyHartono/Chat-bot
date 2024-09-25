@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Add listener for new chat button
-  newChatBtn.addEventListener("click", () => {
+  newChatBtn.addEventListener("click", async () => {
     if (currentSession.length > 0) {
       const initialMessage = currentSession[0]?.message || "No initial message";
 
@@ -56,11 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionId: sessionId++,
         initialMessage: initialMessage,
         timestamp: new Date().toLocaleString(),
-        messages: [...currentSession]
+        messages: [...currentSession],
       });
 
       // Simpan ke localStorage
       localStorage.setItem("chatSessions", JSON.stringify(chatSessions));
+
+      // Save the current chat session to the server
+      await saveChatSession(sessionId - 1, initialMessage, currentSession); // Use sessionId - 1 for the last session added
 
       // Reset sesi obrolan saat ini
       currentSession = [];
@@ -76,6 +79,45 @@ document.addEventListener("DOMContentLoaded", () => {
     textInput.focus();
   });
 
+  // Function untuk menyimpan sesi chat
+  async function saveChatSession(sessionId, initialMessage, messages) {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/chat/save-session",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            sessionId,
+            initialMessage,
+            messages: JSON.stringify(messages), // Save messages as JSON
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log("Session saved:", data);
+    } catch (error) {
+      console.error("Error saving session:", error);
+    }
+  }
+
+  // Function untuk mengambil semua sesi chat
+  async function getChatSessions() {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/chat/get-sessions"
+      );
+
+      const sessions = await response.json();
+      console.log("Chat sessions:", sessions);
+    } catch (error) {
+      console.error("Error fetching sessions:", error);
+    }
+  }
+
   // Function to fetch response from server
   async function fetchResponse(message) {
     try {
@@ -87,36 +129,50 @@ document.addEventListener("DOMContentLoaded", () => {
       return "Maaf, terjadi kesalahan.";
     }
   }
+  // Function to handle checking for birth or death certificate requirements
+  function checkAktaRequirements(message) {
+    const aktaRegex = /akta\b(?!.*(kematian|kelahiran|cerai))/i;
+    if (aktaRegex.test(message)) {
+      const aktaModal = new bootstrap.Modal(document.getElementById('aktaModal'));
+      aktaModal.show();
+    }
+  }
+  
+
   
 
   // Function to display messages in chat box and read out response
   async function sendMessage(message) {
     // Display user message
     const messageElement = document.createElement("p");
-    messageElement.className="user-message";
+    messageElement.className = "user-message"; // Add class for user message
     messageElement.textContent = "User: " + message;
     chatBox.appendChild(messageElement);
-
+  
     // Tambahkan pesan pengguna ke sesi saat ini
     currentSession.push({ sender: "User", message });
-
+  
+    // Check if the message contains only "akta" without "kelahiran" or "kematian"
+    checkAktaRequirements(message);
+  
     // Show loader
     loader.style.display = "block";
-
+  
     // Fetch bot response
     const botResponse = await fetchResponse(message);
-
+  
     setTimeout(() => {
       // Hide loader
       loader.style.display = "none";
-
+  
       // Display bot response
       displayBotMessage(botResponse);
-
+  
       // Tambahkan pesan bot ke sesi saat ini
-      currentSession.push({ sender: " ", message: botResponse });
+      currentSession.push({ sender: "Bot", message: botResponse });
     }, 1000);
   }
+  
 
   // Fungsi untuk menampilkan pesan dari user di sebelah kiri
 // Fungsi untuk menampilkan pesan dari user di sebelah kanan
@@ -228,7 +284,7 @@ function displayBotMessage(botResponse) {
       deleteButton.classList.add("delete-button"); // Add class for styling
       deleteButton.addEventListener("click", (event) => {
         event.stopPropagation(); // Prevent click event from firing for list item
-        if (confirm("Are you sure you want to delete this session?")) {
+        if (confirm("Apakah anda yakin ingin menghapus ini?")) {
           deleteSession(index);
         }
       });

@@ -22,7 +22,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
                   <img src="./src/pictures/capil.svg" alt="Logo" class="logo-img"  />
-                  <span>Disdukcapil</span>
+                  <span style="font-weight: bold;">Disdukcapil</span>
                 </a>
               </li>
             </div>
@@ -37,9 +37,10 @@
                 <a class="nav-link" href="services.html">Services</a>
               </li>
             </div>
-            <div class="nav-records" style="max-height: 500px; overflow-y: auto; padding: 10px; max-width: 200px;" >
+            <!--  <div class="nav-records" style="max-height: 500px; overflow-y: auto; padding: 20px; max-width: 200px; gap: 3;" > -->
+            <div class="nav-records" style="max-height: 400px; padding: 20px; max-width: 200px; gap: 3;" >
               <li class="nav-item">
-                <button id="toggleRecords" class="btn btn-info">Show Records</button>
+                <button id="toggleRecords" class="btn btn-info" style="margin-bottom: 20px;">Show Records</button>
               </li>
               <button id="newChatBtn" class="btn btn-primary mb-3">New Chat</button>
               <ul id="recordList" class="list-unstyled" style="display: none;">
@@ -52,11 +53,15 @@
       
       <!-- Main Content Area -->
       <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <h2 style="color: white; margin-top: 75px;">Chat Interface</h2>
+        <marquee direction="left" style="font-size: 15px; font-weight: bold; color: white; background-color: red;">
+          Selamat Datang di Si-Bantu Dinas Kependudukan dan Pencatatan Sipil Semarang
+        </marquee>
+        
+        <h2 style="color: white; margin-top: 60px; margin-left: 45px; font-weight: bold;">Chat Interface</h2>
         <div class="chat-container" style="max-width: 1200px; margin: auto;">
           
           <div class="chat-wrapper">
-          <div id="chatBox" style="height: 680px;">
+          <div id="chatBox" style="height: 490px;">
             <div id="loader" class="loader" style="display: none;"></div>
           </div>
         
@@ -70,6 +75,44 @@
           </div>
         </div>
       </div>
+      <!-- modal akta -->
+      <div
+          class="modal fade"
+          id="aktaModal"
+          tabindex="-1"
+          aria-labelledby="aktaModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="aktaModalLabel">
+                  Informasi Penting
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                Anda hanya memasukkan persyaratan untuk pembuatan akta. Harap
+                lengkapi dengan keterangan syarat  akta kematian,syarat
+                 akta kelahiran atau syarat  akta perceraian .
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 
