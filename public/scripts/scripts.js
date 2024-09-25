@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function sendMessage(message) {
     // Display user message
     const messageElement = document.createElement("p");
+    messageElement.className="user-message";
     messageElement.textContent = "User: " + message;
     chatBox.appendChild(messageElement);
 
@@ -113,20 +114,51 @@ document.addEventListener("DOMContentLoaded", () => {
       displayBotMessage(botResponse);
 
       // Tambahkan pesan bot ke sesi saat ini
-      currentSession.push({ sender: "Bot", message: botResponse });
+      currentSession.push({ sender: " ", message: botResponse });
     }, 1000);
   }
 
-  // Function to display bot response with splitting for long texts
-  function displayBotMessage(botResponse) {
-    const parts = botResponse.split(/(?=[a-f]\.\s)/);
-    parts.forEach((part) => {
-      const botMessageElement = document.createElement("p");
-      botMessageElement.textContent = "Bot: " + part.trim();
-      chatBox.appendChild(botMessageElement);
-    });
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
+  // Fungsi untuk menampilkan pesan dari user di sebelah kiri
+// Fungsi untuk menampilkan pesan dari user di sebelah kanan
+function displayUserMessage(userMessage) {
+  const userMessageElement = document.createElement("div");
+  userMessageElement.classList.add("message-container", "user-message");
+  userMessageElement.innerHTML = `
+    <div class="message user-message-content">
+      <strong>User:</strong> ${userMessage.trim()}
+    </div>`;
+  chatBox.appendChild(userMessageElement);
+  chatBox.scrollTop = chatBox.scrollHeight; // Scroll ke pesan terbaru
+}
+
+// Fungsi untuk menampilkan pesan dari bot di sebelah kiri
+function displayBotMessage(botResponse) {
+  // Split response into parts based on semicolon for better readability
+  const parts = botResponse.split(";");
+
+  // Tambahkan spasi antara pesan user dan respons bot
+  const spacerElement = document.createElement("div");
+  spacerElement.style.marginTop = "20px";  // Atur ukuran spasi
+  chatBox.appendChild(spacerElement);
+
+  parts.forEach((part) => {
+    const botMessageElement = document.createElement("div");
+    botMessageElement.classList.add("message-container", "bot-message");
+
+    // Tambahkan setiap bagian sebagai paragraf terpisah
+    botMessageElement.innerHTML = `
+      <div class="message bot-message-content">
+        <strong> </strong> ${part.trim()}
+      </div>`;
+    
+    chatBox.appendChild(botMessageElement);
+  });
+  
+  chatBox.scrollTop = chatBox.scrollHeight; // Scroll ke pesan terbaru
+}
+
+  
+
 
   // Function to convert text to speech
   function speak(text) {
