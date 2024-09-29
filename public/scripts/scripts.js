@@ -264,7 +264,7 @@ function displayBotMessage(botResponse) {
   function displayRecords() {
     const records = JSON.parse(localStorage.getItem("chatSessions")) || [];
     recordList.innerHTML = "";
-    records.forEach((session, index) => {
+    records.reverse().forEach((session, index) => {
       const listItem = document.createElement("li");
       listItem.style.display = "flex";
       listItem.style.alignItems = "center";
@@ -284,7 +284,7 @@ function displayBotMessage(botResponse) {
       deleteButton.classList.add("delete-button"); // Add class for styling
       deleteButton.addEventListener("click", (event) => {
         event.stopPropagation(); // Prevent click event from firing for list item
-        if (confirm("Apakah anda yakin ingin menghapus ini?")) {
+        if (confirm("Apakah anda yakin ingin menghapus percakapan ini?")) {
           deleteSession(index);
         }
       });
