@@ -10,6 +10,10 @@ const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
+// Handle requests for the main page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "DASHBOARD.html"));
+});
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -32,10 +36,7 @@ app.get("/response", (req, res) => {
   });
 });
 
-// Handle requests for the main page
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+
 
 app.use("/api/chat", chatRoutes);
 
