@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Function to handle checking for birth or death certificate requirements
   function checkAktaRequirements(message) {
-    const aktaRegex = /akta\b(?!.*(kematian|kelahiran|cerai))/i;
+    const aktaRegex = /akta\b(?!.*(kematian|kelahiran|cerai|nikah))/i;
     if (aktaRegex.test(message)) {
       const aktaModal = new bootstrap.Modal(document.getElementById('aktaModal'));
       aktaModal.show();
